@@ -79,11 +79,12 @@ function writeJobs() {
       .then(handleError)
       .then((data) => {
         let parent = document.getElementById(data.id);
+        let topContainer = parent.getElementsByClassName("container")[0];
         let parentContainer = parent.getElementsByClassName("job-container")[0];
         let sectionHeading = document.getElementById("dname");
         let sectionTitle = sectionHeading.cloneNode(true);
         sectionTitle.innerText = data.name;
-        parentContainer.appendChild(sectionTitle);
+        topContainer.appendChild(sectionTitle);
         data.jobs.forEach((job) => {
           let listing = document.getElementById("listing");
           let ghListing = listing.cloneNode(true);
