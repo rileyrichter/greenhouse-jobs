@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     .then(handleError)
     .then((data) => {
       data.departments.forEach((department) => {
-        if (department.jobs.length !== 0) {
+        if (department.jobs.length !== 0 || department.id === 0) {
           jobIds.push(department.id);
           let sectionWrapper = document.getElementById("section");
           let sectionClone = sectionWrapper.cloneNode(true);
